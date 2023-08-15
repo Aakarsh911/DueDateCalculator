@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Due Date Calculator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="jquery-ui-themes-1.13.2/themes/ui-lightness/jquery-ui.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+</head>
+<body>
+<div class="main">
+    <div>
+        <h2 class="heading">Due Date Calculator</h2>
+        <h3 class="heading2">Estimate your due date using your last menstrual period, conception date or date of your last ultrasound.</h3>
+    </div>
+    <div class="calculator">
+        <h4>Calculation Method</h4>
+        <div class="dropdown">
+            <div class="select">
+                <span class="selected firstSel">Last Period</span>
+                <div class="caret"></div>
+            </div>
+            <ul class="menu">
+                <li class="active">Last Period</li>
+                <li>Ultrasound Date</li>
+                <li>Conception Date</li>
+            </ul>
+        </div>
+        <h4 class="second">Average Cycle Length</h4>
+        <div class="dropdown pad">
+            <div class="select">
+                <span class="selected secondSel">28 days</span>
+                <div class="caret"></div>
+            </div>
+            <ul class="menu">
+                <li>21 days</li>
+                <li>22 days</li>
+                <li>23 days</li>
+                <li>24 days</li>
+                <li>25 days</li>
+                <li>26 days</li>
+                <li>27 days</li>
+                <li class="active">28 days</li>
+                <li>29 days</li>
+                <li>30 days</li>
+                <li>31 days</li>
+                <li>32 days</li>
+                <li>33 days</li>
+                <li>34 days</li>
+                <li>35 days</li>
+            </ul>
+        </div>
+        <div class="ultrasound hidden">
+            <h4>Weeks</h4>
+            <div class="dropdown">
+                <div class="select">
+                    <span class="selected thirdSel">6</span>
+                    <div class="caret"></div>
+                </div>
+                <ul class="menu">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li class="active">6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                    <li>11</li>
+                    <li>12</li>
+                    <li>13</li>
+                    <li>14</li>
+                    <li>15</li>
+                    <li>16</li>
+                    <li>17</li>
+                    <li>18</li>
+                    <li>19</li>
+                    <li>20</li>
+                    <li>21</li>
+                    <li>22</li>
+                    <li>23</li>
+                    <li>24</li>
+                </ul>
+            </div>
+            <h4>Days</h4>
+            <div class="dropdown">
+                <div class="select">
+                    <span class="selected fourthSel">1</span>
+                    <div class="caret"></div>
+                </div>
+                <ul class="menu">
+                    <li>0</li>
+                    <li class="active">1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                </ul>
+            </div>
+        </div>
+
+        <h4 class="date"></h4>
+        <p><input type="text" id="datepicker" class="calendar" readonly="readonly" value="Select a date"><i class="fa fa-calendar logo"></i></p>
+        <div class="submit">Calculate</div>
+        <h2 class="choose-date hidden">Please select a date</h2>
+    </div>
+    <div class="new-date hidden"><h1 class="show"></h1></div>
+    <div class="generated hidden">
+        <div class="circle2">
+            <div class="circle">
+                <div class="baby"></div>
+                <h3 class="date-day"></h3>
+                <h3 class="date-number"></h3>
+                <h3 class="date-year"></h3>
+                <h4 class="date-day-small"></h4>
+                <h4 class="date-number-small"></h4>
+                <h4 class="date-year-small"></h4>
+            </div>
+        </div>
+    </div>
+    <h2 class="percentage hidden"></h2>
+    <div class="progress hidden">
+        <div class="first-trim">First Trimester
+            <div class="bar">
+                <div class="bar-value"></div>
+            </div>
+        </div>
+        <div class="sec-trim">Second Trimester
+            <div class="bar">
+                <div class="bar-value"></div>
+            </div>
+        </div>
+        <div class="third-trim">Third Trimester
+            <div class="bar">
+                <div class="bar-value"></div>
+            </div>
+        </div>
+    </div>
+    <div class="progress">
+        <div class="recalculate hidden"><a href="#main" class="link">Recalculate Your Date</a></div>
+    </div>
+    <div class="celebrity hidden"></div>
+    <div class="zodiac hidden"></div>
+    <div class="info">
+        <h2 class="info-heading">Curious about your expected delivery date?</h2>
+        <h3>Pregnancies typically span around 280 days or 40 weeks, and this duration forms the foundation of most due date estimations. Depending on the details you have, there are multiple ways to estimate your due date:</h3>
+
+        <h3><span class="color">Last Menstrual Period (LMP) Calculation:</span> This common method involves adding 40 weeks (or 280 days) to the first day of your last period.</h3>
+
+        <h3><span class="color">Modified LMP Method:</span> Another technique involves adding seven days to your LMP, then counting backward three months. So if your LMP started on October 20, you'd add seven days to arrive at October 27, then subtract three months, giving a due date of July 27.</h3>
+
+        <h3><span class="color">Uterus Size Evaluation:</span> Sometimes, your healthcare provider might estimate your due date based on the size of your uterus. By around 12 weeks of pregnancy, the uterus can be palpated above the pelvis. Post 18 weeks, the distance from the pubic bone to the fundus (the top of the uterus) often equates to the number of weeks since your LMP.</h3>
+
+        <h3><span class="color">Ultrasound Assessment:</span> An ultrasound can also offer a good estimate of gestational age if the precise date of your LMP or ovulation is uncertain. Ultrasound technology uses sound waves to create images, allowing a view of the fetus's growth and health.</h3>
+
+        <h3><span class="color">Conception Date Calculation:</span> If you happen to know the exact date of conception, you can also calculate your due date from this point. Simply add 266 days (38 weeks) to your conception date for an estimated due date.</h3>
+
+        <h3>Remember, these methods offer estimated due dates, not guaranteed delivery dates. For accurate assessments and to understand safety precautions during your pregnancy, always consult your obstetrician or healthcare provider.</h3>
+    </div>
+</div>
+<script src="js/index.js"></script>
+</body>
+</html>

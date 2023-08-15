@@ -1,0 +1,511 @@
+body {
+    background: white;
+    font-family: 'Monomaniac One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+}
+
+html,body{
+    min-height:100%;
+}
+
+.main {
+    overflow: hidden;
+}
+
+.heading,.heading2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main h2 {
+    padding-top: 1em;
+    margin-top: 0;
+}
+
+.heading {
+    color : #05a3ef;
+}
+
+.heading2 {
+    color : #3b3850;
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+}
+
+.dropdown {
+    min-width: 15em;
+    max-width: 15em;
+    position: relative;
+    margin: 2em;
+    margin-top: 0.5em;
+}
+
+.dropdown * {
+    box-sizing: border-box;
+}
+
+.calculator {
+    display: grid;
+    justify-content: center;
+    text-align: left;
+    height: max-content;
+}
+
+h4 {
+    margin: 0;
+    margin-left: 2em;
+    color: gray;
+}
+
+.select {
+    background: white;
+    color : #05a3ef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border : 2px #3b3850 solid;
+    border-radius : 0.5em;
+    padding: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.select-clicked {
+    border: 2px #26489a solid;
+    box-shadow: 0 0 0.8em #26489a;
+}
+
+.select:hover {
+    background: lightgray;
+    color: white;
+}
+
+.caret {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #000;
+    transition: 0.3s;
+}
+
+.caret-rotate {
+    transform: rotate(180deg);
+}
+
+.menu {
+    max-height: 30rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    list-style: none;
+    padding: 0.2em 0.5em;
+    background: white;
+    border: 1px #363a43 solid;
+    box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+    border-radius: 0.5em;
+    color: #9fa5b5;
+    position: absolute;
+    top: 3em;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    opacity: 0;
+    display: none;
+    transition: 0.2s;
+    z-index: 1;
+}
+
+.menu li {
+    padding: 0.7em 0.5em;
+    margin: 0.3em 0;
+    border-radius: 0.5em;
+    cursor: pointer;
+    color: black;
+}
+
+.menu li:hover {
+    background: lightgrey;
+}
+
+.menu .active {
+    background: #05a3ef;
+    color: white;
+}
+
+.menu-open {
+    display: block;
+    opacity: 1;
+}
+
+.hidden {
+    display: none !important;
+    opacity: 0;
+}
+
+.submit {
+    height: 3em;
+    width: 10em;
+    background: #05a3ef;
+    border-radius: 2em;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(45%);
+}
+
+.submit:hover {
+    background: #042838;
+}
+
+.calendar:hover {
+    cursor: pointer;
+}
+
+.logo {
+    transform: translateX(-200%);
+    color: #05a3ef;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+.generated {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar {
+    margin-left: 2.5em;
+    border-radius: 0.5em;
+    color : #05a3ef;
+    height: 3.5em;
+    width: 16em;
+    padding-left: 1.5em;
+    font-family: 'Monomaniac One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    border: 2px #3b3850 solid;
+}
+
+.circle {
+    width: 7em;
+    height: 7em;
+    border-radius: 50%;
+    background: #faedd4;
+    border: 0.1em #05a3ef solid;
+    display: grid;
+    justify-content: center;
+    color: pink;
+    font-size: 50px;
+    padding: 5px;
+    text-align: center;
+}
+
+.circle h3 {
+    transform: translateY(-100%);
+}
+
+.circle2 {
+    position: relative;
+    width: 9em;
+    height: 9em;
+    border-radius: 50%;
+    background: pink;
+    border: 0.1em #05a3ef solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 50px;
+    padding: 5px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .circle {
+        width: 5em;
+        height: 5em;
+        border-radius: 50%;
+        background: #faedd4;
+        border: 0.1em #05a3ef solid;
+        display: grid;
+        justify-content: center;
+        color: white;
+        font-size: 50px;
+        padding: 5px;
+        text-align: center;
+    }
+
+    body {
+        background: linear-gradient(to bottom, rgba(235, 255, 243, 0.8), rgba(222, 255, 251, 0.8) 26%, rgba(182, 223, 241, 0.8));
+    }
+
+    .circle2 {
+        width: 5.5em;
+        height: 5.5em;
+        border-radius: 50%;
+        background: pink;
+        border: 0.1em #05a3ef solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 50px;
+        padding: 5px;
+        text-align: center;
+        z-index: -1;
+    }
+
+    .circle h3 {
+        display: none;
+    }
+
+    .date-day-small, .date-number-small, .date-year-small {
+        display: block;
+    }
+
+    .circle h4 {
+        transform: translate(-20%, -140%);
+        color: pink;
+    }
+
+    .baby {
+        width: 6em;
+        height: 3em;
+        background-image: url('../baby.png');
+        background-repeat:no-repeat;
+        background-size:contain;
+        margin-left: 1em;
+        transform: translateY(-30%);
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .baby {
+        width: 10em;
+        height: 4em;
+        background-image: url('../baby.png');
+        background-repeat:no-repeat;
+        background-size:contain;
+        margin-left: 3.5em;
+        transform: translateY(-10%);
+    }
+
+    body {
+        background: #545454;
+    }
+
+    .main {
+        width: 60%;
+        margin-left: 20%;
+        background: linear-gradient(to bottom, rgba(235, 255, 243, 0.8), rgba(222, 255, 251, 0.8) 90%, rgba(182, 223, 241, 0.8));
+        min-height: 100vh;
+    }
+
+    .heading {
+        margin-top: 0.5em;
+    }
+
+    .date-day-small, .date-number-small, .date-year-small {
+        display: none;
+    }
+}
+
+.new-date {
+    color: pink;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+}
+
+@keyframes rotating {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.star {
+    animation: rotating 2s linear infinite;
+    transform: translateX(50%);
+    font-size: 50%;
+    color: white;
+}
+
+.fs {
+    transform: translate(5em, 5em);
+}
+
+h1 {
+    padding: 0;
+}
+
+.date-day, .date-year, .date-number {
+    margin: 0;
+}
+
+p {
+    padding: 0;
+}
+
+.baby {
+    background-image: url('../baby.png');
+    background-repeat:no-repeat;
+    background-size:contain;
+}
+
+.first-trim, .sec-trim, .third-trim {
+    width: 20rem;
+    height: 5rem;
+    border-radius: 0.5rem;
+    margin: 1em;
+    color: #05a3ef;
+    padding: 1em;
+    text-align: center;
+}
+
+.progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar {
+    width: 100%;
+    height: 1em;
+    background: grey;
+    border-radius: 0.5em;
+    margin-top: 0.5em;
+    overflow: hidden;
+}
+
+.bar-value {
+    position: relative;
+    width: 0;
+    height: 1em;
+    background: #05a3ef;
+    border-radius: 0.5em;
+}
+
+@keyframes inc {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.percentage {
+    width: 100%;
+    text-align: center;
+    color: #05a3ef;
+    padding-top: 2em;
+}
+
+.show {
+    color: #05a3ef;
+}
+
+.recalculate {
+    height: 2em;
+    width: 15em;
+    text-align: center;
+    color: white;
+    background: #05a3ef;
+    border-radius: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.choose-date {
+    color: red;
+    margin: 1em;
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.recalculate:hover {
+    background: white;
+    height: 1.9em;
+    width: 14.9em;
+    border: 0.1em #05a3ef solid;
+    color: #05a3ef;
+    cursor: pointer;
+}
+
+.celebrity, .zodiac {
+    text-align: center;
+    color: #05a3ef;
+}
+
+.celebrity {
+    padding-top: 2em;
+}
+
+.zodiac {
+    padding-top: 0.5em;
+}
+
+.pointer {
+    height: 1em;
+    width: 1.5em;
+    background: #05a3ef;
+    transform: translateY(-150%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    height: 0.5em;
+    width: 0.5em;
+    background: #05a3ef;
+    transform: rotate(45deg);
+    margin-top: 1em;
+    z-index: -1;
+}
+
+@keyframes move {
+    0% {
+        opacity: 0;
+        transform: translate(0, -150%);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.info {
+    color: #05a3ef;
+    width: 100%;
+    padding: 1em;
+    margin-top: 1em;
+}
+
+.info h3 {
+    color: gray;
+    margin-top: 2em;
+    margin-right: 1em;
+}
+
+.color {
+    color: #05a3ef;
+}
