@@ -9,10 +9,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&family=Montserrat:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="jquery-ui-themes-1.13.2/themes/ui-lightness/jquery-ui.css">
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-ui.js"></script>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="main">
@@ -122,9 +127,9 @@
                 <h3 class="date-day"></h3>
                 <h3 class="date-number"></h3>
                 <h3 class="date-year"></h3>
-                <h4 class="date-day-small"></h4>
-                <h4 class="date-number-small"></h4>
-                <h4 class="date-year-small"></h4>
+                <h6 class="date-day-small"></h6>
+                <h6 class="date-number-small"></h6>
+                <h6 class="date-year-small"></h6>
             </div>
         </div>
     </div>
@@ -149,21 +154,40 @@
     <div class="progress">
         <div class="recalculate hidden"><a href="#main" class="link">Recalculate Your Date</a></div>
     </div>
-    <div class="celebrity hidden"></div>
-    <div class="zodiac hidden"></div>
+    <div class="fun-facts hidden">
+        <h2 class="fact-head">Fun facts about</h2>
+        <div class="celebrity hidden">
+            <div class="pic">
+                <img src="25.png">
+            </div>
+            <div class="celebrity-info"></div>
+        </div>
+        <div class="zodiac hidden">
+            <div class="short">
+                <img class="sign" src="">
+            </div>
+            <div class="zodiac-info"></div>
+        </div>
+        <div class="fact hidden">
+            <div class="pic">
+                <img src="26.png">
+            </div>
+            <div class="fact-info"></div>
+        </div>
+    </div>
     <div class="info">
         <h2 class="info-heading">Curious about your expected delivery date?</h2>
         <h3>Pregnancies typically span around 280 days or 40 weeks, and this duration forms the foundation of most due date estimations. Depending on the details you have, there are multiple ways to estimate your due date:</h3>
 
-        <h3><span class="color">Last Menstrual Period (LMP) Calculation:</span> This common method involves adding 40 weeks (or 280 days) to the first day of your last period.</h3>
+        <p><span class="color">Last Menstrual Period (LMP) Calculation:</span> This common method involves adding 40 weeks (or 280 days) to the first day of your last period.</p>
 
-        <h3><span class="color">Modified LMP Method:</span> Another technique involves adding seven days to your LMP, then counting backward three months. So if your LMP started on October 20, you'd add seven days to arrive at October 27, then subtract three months, giving a due date of July 27.</h3>
+        <p><span class="color">Modified LMP Method:</span> Another technique involves adding seven days to your LMP, then counting backward three months. So if your LMP started on October 20, you'd add seven days to arrive at October 27, then subtract three months, giving a due date of July 27.</p>
 
-        <h3><span class="color">Uterus Size Evaluation:</span> Sometimes, your healthcare provider might estimate your due date based on the size of your uterus. By around 12 weeks of pregnancy, the uterus can be palpated above the pelvis. Post 18 weeks, the distance from the pubic bone to the fundus (the top of the uterus) often equates to the number of weeks since your LMP.</h3>
+        <p><span class="color">Uterus Size Evaluation:</span> Sometimes, your healthcare provider might estimate your due date based on the size of your uterus. By around 12 weeks of pregnancy, the uterus can be palpated above the pelvis. Post 18 weeks, the distance from the pubic bone to the fundus (the top of the uterus) often equates to the number of weeks since your LMP.</p>
 
-        <h3><span class="color">Ultrasound Assessment:</span> An ultrasound can also offer a good estimate of gestational age if the precise date of your LMP or ovulation is uncertain. Ultrasound technology uses sound waves to create images, allowing a view of the fetus's growth and health.</h3>
+        <p><span class="color">Ultrasound Assessment:</span> An ultrasound can also offer a good estimate of gestational age if the precise date of your LMP or ovulation is uncertain. Ultrasound technology uses sound waves to create images, allowing a view of the fetus's growth and health.</p>
 
-        <h3><span class="color">Conception Date Calculation:</span> If you happen to know the exact date of conception, you can also calculate your due date from this point. Simply add 266 days (38 weeks) to your conception date for an estimated due date.</h3>
+        <p><span class="color">Conception Date Calculation:</span> If you happen to know the exact date of conception, you can also calculate your due date from this point. Simply add 266 days (38 weeks) to your conception date for an estimated due date.</p>
 
         <h3>Remember, these methods offer estimated due dates, not guaranteed delivery dates. For accurate assessments and to understand safety precautions during your pregnancy, always consult your obstetrician or healthcare provider.</h3>
     </div>

@@ -500,6 +500,8 @@ submit.addEventListener('click', () => {
         document.querySelector('.new-date').classList.toggle('hidden');
         document.querySelector('.recalculate').classList.toggle('hidden');
         document.querySelector('.percentage').classList.toggle('hidden');
+        document.querySelector('.fun-facts').classList.remove('hidden');
+        document.querySelector('.fact').classList.toggle('hidden');
         document.querySelector('.show').innerHTML = "Your estimated due date is" + newDate;
         document.querySelector('.date-number').innerHTML = newDate.substring(5, 7);
         document.querySelector('.date-day').innerHTML = newDate.substring(0, 4);
@@ -523,9 +525,22 @@ submit.addEventListener('click', () => {
         document.querySelector('.choose-date').classList.remove('hidden');
     }
 
+    const signs = ["Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn"];
+    const facts = ["Aquarius individuals are innovative and humanitarian, and embrace unconventional ideas.",
+        "Pisces individuals are intuitive and creative, and are deeply connected to their emotions.",
+        "Aries individuals are natural leaders with boundless energy and a pioneering spirit.",
+        "Taurus individuals appreciate life's pleasures, and are known for their determination and stubbornness.",
+        "Gemini individuals are versatile and adaptable, often juggling multiple interests and social circles.",
+        "Cancer individuals are nurturing and empathetic, and are deeply connected to their emotions.",
+        "Leo individuals are charismatic performers with strong leadership qualities.",
+        "Virgo individuals are detail-oriented and analytical, often perfectionists.",
+        "Libra individuals value harmony and fairness, and are a natural diplomat.",
+        "Scorpio individuals are intense and passionate with a mysterious aura.",
+        "Sagittarius individuals are adventurous and curious, and seek knowledge and new experiences.",
+        "Capricorn individuals are ambitious and disciplined, and are focused on achieving goals."];
+
     const findSign = (date) => {
         const days = [21, 20, 21, 21, 22, 22, 23, 24, 24, 24, 23, 22];
-        const signs = ["Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo",    "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn"];
         let month = date.getMonth();
         let day = date.getDate();
         if(month == 0 && day <= 20){
@@ -536,11 +551,22 @@ submit.addEventListener('click', () => {
         return signs[month];
     };
 
-    document.querySelector('.zodiac').innerHTML = "Your baby will be a " + findSign(finalDate) + ".";
+    var fact;
+    for (let i = 0; i < signs.length; i++) {
+        if (findSign(finalDate) === signs[i]) {
+            fact = facts[i];
+            break;
+        }
+    }
+
+    document.querySelector('.zodiac-info').innerHTML = "Your baby will be a " + findSign(finalDate) + ".";
+    document.querySelector('.fact-info').innerHTML = "Interesting fact: " + fact;
+    document.querySelector('.fact-head').innerHTML = "Fun facts about " + newDate.substring(0, 7) + " babies";
+    document.querySelector('.sign').setAttribute("src",  findSign(finalDate) + ".png");
 
     for (let i = 0; i < indianCelebrities.length; i++) {
         if (indianCelebrities[i]["date"].substring(0, 6) === newDate.substring(5, 7) + newDate.substring(0, 4)) {
-            document.querySelector('.celebrity').innerHTML = indianCelebrities[i]["name"] + " (" + indianCelebrities[i]["occupation"] + ") was born on " + indianCelebrities[i]["date"];
+            document.querySelector('.celebrity-info').innerHTML = "Famous person born on this day: " + indianCelebrities[i]["name"] + " (" + indianCelebrities[i]["occupation"] + ") was born on " + indianCelebrities[i]["date"];
             break;
         }
     }
@@ -557,6 +583,8 @@ document.querySelector('.recalculate').addEventListener('click', () => {
     document.querySelector('.new-date').classList.toggle('hidden');
     document.querySelector('.recalculate').classList.toggle('hidden');
     document.querySelector('.percentage').classList.toggle('hidden');
+    document.querySelector('.fun-facts').classList.add('hidden');
+    document.querySelector('.fact').classList.toggle('hidden');
     document.querySelector('.choose-date').classList.add('hidden');
     document.querySelector('.bar-value').style.animation = "none";
     document.querySelector('.bar-value').style.width = "0";
